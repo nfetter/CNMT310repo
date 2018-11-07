@@ -20,7 +20,8 @@ class navAndbottom {
 		$returnVal .= "<li><a href='search.php'>Search</a></li> \n";
 		$returnVal .= "<li><a href='aboutus.php'>About Us</a></li> \n";
 		$returnVal .= "<li><a href='underconstruction.php'>Shop</a></li> \n";
-		$returnVal .= "<li><a href='contactus.php'>Contact Us</a></li> \n";				
+		$returnVal .= "<li><a href='contactus.php'>Contact Us</a></li> \n";	
+		$returnVal .= "<li><a href='login.php'>Log In</a></li> \n";		
 		$returnVal .= "</ul> \n";
 		$returnVal .= "</div> \n";
 		$returnVal .= "<div class='border'> \n";
