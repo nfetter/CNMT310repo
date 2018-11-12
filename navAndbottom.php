@@ -8,11 +8,19 @@ class navAndbottom {
 
   private $_bottom;
 
+  
+  
 
 	function setTopSection() {
 		
 		$returnVal = "";
 		$returnVal .= "<div class='border'> \n";
+		
+		//Code to display user name
+		if(isset($_SESSION['user'])) {	
+			$returnVal .= "<h1>Welcome </h1>";
+		}
+		
 		$returnVal .= "<img src='Pictures/icon' alt='pic' width='150' height='100'/> \n";
 		$returnVal .= "<div id='nav'> \n";
 		$returnVal .= "<ul> \n";
@@ -27,8 +35,6 @@ class navAndbottom {
 		$returnVal .= "<div class='border'> \n";
 
 		$this->_top = $returnVal;
-
-
 
 	} //end function setTopSection
 

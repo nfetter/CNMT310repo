@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once('Template.php');
 /*for nav and bottom*/require_once('navAndbottom.php');
 //Database stuff
@@ -21,8 +23,8 @@ print $page->getTopSection();
 
 print"
 <div class='login-form'>
-    <form action='/examples/actions/confirmation.php' method='post'>
-        <h2 class='text-center'>Log in</h2>       
+    <form action='validate.php' method='post'>
+        <h2 class='text-center'>Log In</h2>       
         <div class='form-group'>
             <input type='text' class='form-control' id='user' placeholder='Username' required='required'>
         </div>
