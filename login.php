@@ -3,10 +3,12 @@ session_start();
 
 require_once('Template.php');
 /*for nav and bottom*/require_once('navAndbottom.php');
+
 //Database stuff
 require_once('DB.class.php');
 $db = new DB();
 $page = new Template('My Page');
+
 /*for nav and bottom*/$myPage = new navAndbottom('My content');
 $page->setHeadSection("<script src='hello.js'></script>
 <link rel='stylesheet' href='main.css'>
@@ -26,10 +28,10 @@ print"
     <form action='validate.php' method='post'>
         <h2 class='text-center'>Log In</h2>       
         <div class='form-group'>
-            <input type='text' class='form-control' id='user' placeholder='Username' required='required'>
+            <input type='text' class='form-control' id='user' name='user' placeholder='Username' required='required'>
         </div>
         <div class='form-group'>
-            <input type='password' class='form-control' id='pass' placeholder='Password' required='required'>
+            <input type='password' class='form-control' id='pass' name='pass' placeholder='Password' required='required'>
         </div>
         <div class='form-group'>
             <button type='submit' class='btn btn-primary btn-block'>Log in</button>

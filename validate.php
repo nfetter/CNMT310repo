@@ -1,10 +1,13 @@
 <?php
 
 session_start();
+//Calls the database
+	require_once("DB.class.php");
+	$db = new DB();	
 	
 	//Validate and sanitize username
 	if(isset($_POST['user'])){
-		$sanitizedName = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+		$sanitizedName = filter_var($_POST['user'], FILTER_SANITIZE_STRING);
 			
 	}
 	else {
@@ -20,10 +23,6 @@ session_start();
 		exit();
 	}
 	
-	//Calls the database
-	require_once("DB.class.php");
-	$db = new DB();
-	
 	//See if database is connected
 		if (!$db->getConnStatus()) {
 			print "An error has occurred with connection\n";
@@ -33,8 +32,8 @@ session_start();
 	$result = $db->dbCall($query);
 
 	foreach($result as $row){
-		if($row['username'] == $sanatizedName){
-			if(PASSWORD_VERIFY($sanatizedPass, $row['userpass'])) {
+		if($row['username'] == $sanitizedName){
+			if(PASSWORD_VERIFY($sanitizedPass, $row['userpass'])) {
 				$_SESSION['user'] = $sanitizedName;
 				
 				$id = $row['id'];
