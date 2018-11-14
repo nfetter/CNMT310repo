@@ -47,7 +47,8 @@ class navAndbottom {
     </ul>
   </div>  
 </nav>
-
+</div>
+<div class='border'>
  \n";
 
 		$this->_top = $returnVal;

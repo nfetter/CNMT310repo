@@ -33,7 +33,7 @@ print $page->getTopSection();
 
 /*for nav and bottom*/print $myPage->getTopSection();
 
-print "<img src='Pictures/underConstruction' alt='Under Construction'>";
+print "<img src='Pictures/underConstruction' class='shop' alt='Under Construction'>";
 
 /*for nav and bottom*/print $myPage->getBottomSection();
 

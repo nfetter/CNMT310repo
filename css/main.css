@@ -3,6 +3,7 @@ body,div,h1,form,fieldset,input{
 			padding:0;
 			border:0;
 			outline:0;
+			
 			}
 		html{
 			height:100%;
@@ -65,6 +66,10 @@ body,div,h1,form,fieldset,input{
 				 margin-left:auto;
 				margin-right:auto;
 			}
+		.shop{
+			width:100%;
+			length:100%;
+		}
 		
 		#footer {
 			margin-top: 50px;
