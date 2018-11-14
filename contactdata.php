@@ -31,13 +31,38 @@ print $page->getTopSection();
 
 /*for nav and bottom*/print $myPage->getTopSection();
 
-print"
+//Check if connected
+if (!$db->getConnStatus()) {
+  print "An error has occurred with connection\n";
+  exit;
+}
 
+$query="SELECT * FROM contactsubmit;";
 
-
-           \n"
-
-
+//Run query
+$result = $db->dbCall($query);
+print "<div id=contact>";
+print "<table>";
+print "<tr>";
+print "<th>ID</th>";
+print "<th>First Name</th>";
+print "<th>Last Name</th>";
+print "<th>Email</th>";
+print "<th>Phone Number</th>";
+print "<th>Comments</th>";
+print "</tr>";
+foreach($result as $row){
+	print "<tr>";
+	print "<td>" . $row['id'] . "</td>";
+	print "<td>" . $row['firstname'] . "</td>";
+	print "<td>" . $row['lastname'] . "</td>";
+	print "<td>" . $row['email'] . "</td>";
+	print "<td>" . $row['phonenumber'] . "</td>";
+	print "<td>" . $row['comments'] . "</td>";
+	print "</tr>";
+}
+print "</table>";
+print "</div> \n";
 
 
 /*for nav and bottom*/print $myPage->getBottomSection();
