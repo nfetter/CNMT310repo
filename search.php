@@ -14,7 +14,7 @@ $page->setHeadSection("
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous'></script>
 
 	 <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'>
-<link rel='stylesheet' href='main.css'>
+<link rel='stylesheet' href='css/main.css'>
 <link rel='stylesheet' href='css/bootstrap-grid.css'>
         <link rel='stylesheet' href='css/bootstrap-reboot.css'>
         <link rel='stylesheet' href='css/bootstrap.css'>
@@ -31,7 +31,7 @@ print "<div id= 'contact'> \n";
 print "<form method='post' action='searchResult.php'>";
 print "<fieldset> \n";
 print "Search: <input type='text' name='search'>";
-print "<br><input type='submit' name='Submit' value='Submit'>";
+print "<br/><br/><button type='submit' class = 'button' name='Submit' value='Submit'>Submit</button>";
 print "</fieldset> \n";
 print "</form>";
 print "</div> \n";
