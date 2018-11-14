@@ -41,8 +41,16 @@ class navAndbottom {
 			</li> 
 			<li class='nav-item'>
 			<a class='nav-link' href='contactus.php'>Contact Us</a>
-			</li>
-			<li class='nav-item'>";
+			</li>";
+			if(isset($_SESSION['role'])) {
+			if ($_SESSION ['role']== "admin"){
+				$returnVal .= "<li class='nav-item'>
+			<a class='nav-link' href='contactdata.php'>Contact Data</a>
+			</li>";
+			}
+			}
+			
+			$returnVal .= "<li class='nav-item'>";
 		if(!isset($_SESSION['user'])) {
 			$returnVal .= "<a class='nav-link' href='login.php'>Log In</a></li>";	
 		}else{
