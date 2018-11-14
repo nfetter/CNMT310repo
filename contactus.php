@@ -32,23 +32,35 @@ print $page->getTopSection();
 
 /*for nav and bottom*/print $myPage->getTopSection();
 
-print "<div id=contact>";
-print "<h1>Contact Us</h1> \n";
-print "<p>* Please fill out this form.</p> \n";
-print "<form action='Thankyou.php' method='post'> \n";
-print "<fieldset> \n";
-print "*First Name: <input name='firstName' id='firstName' type='text' /> <br /> \n";
-print "*Last Name: <input name='lastName' id='lastName' type='text' /> <br /> \n";
-print "*Email address: <input name='emailAddress' id='emailAddress' type='text' require/> <br /> \n";
-print "*Phone Number: <input name='phoneNumber' id='phoneNumber' type='text' /> <br /> \n";	
-print "*Comment: <br/> \n";
-print "<textarea name='comment' id='comment' rows='5' cols='58' require></textarea><br/><br/>";			
-print "<button type='submit'>submit</button> \n";
-print "</fieldset> \n";
-print "</form> \n";	
+print"
+<div class='login-form'>
+	<form action='Thankyou.php' method='post'>
+	<h1>Contact Us</h1>
+	<p>* Please fill out this form.</p>
+      
+        <div class='form-group'>
+            <input type='text' class='form-control' id='firstName' name='firstname' placeholder='FirstName' required='required'>
+        </div>
+        <div class='form-group'>
+            <input type='text' class='form-control' id='lastName' name='lastname' placeholder='LastName' required='required'>
+        </div>
+		<div class='form-group'>
+            <input type='text' class='form-control' id='emailAddress' name='emailAddress' placeholder='EmailAddress' required='required'>
+        </div>
+		<div class='form-group'>
+            <input type='text' class='form-control' id='phoneNumber' name='phoneNumber' placeholder='PhoneNumber' required='required'>
+        </div>
+        <div class='form-group'>
+            <button type='submit' class='btn btn-primary btn-block'>Submit</button>
+        </div>
+        
+    </form>
+  
+</div>
 
-print "</div> \n";
 
+         
+           \n";
 /*for nav and bottom*/print $myPage->getBottomSection();
 
 print $page->getBottomSection();
