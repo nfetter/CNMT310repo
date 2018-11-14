@@ -18,38 +18,42 @@ class navAndbottom {
 		
 		//Code to display user name
 		if(isset($_SESSION['user'])) {	
-			$returnVal .= "<h1>Welcome </h1>";
+			$returnVal .= "<h2 style='color:white;position:absolute;top:0px;right:0px;'>Welcome " . $_SESSION['user'] . "</h2>";
 		}
 		
 		$returnVal .= "<img src='Pictures/icon' alt='pic' width='150' height='100'/> \n";
 		
 		$returnVal .= "	<nav class='navbar navbar-expand-md bg-dark navbar-dark'>
-  <a class='navbar-brand' href='Home.php'>Bookstore</a>
-  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
-    <span class='navbar-toggler-icon'></span>
-  </button>
-  <div class='collapse navbar-collapse' id='collapsibleNavbar'>
-  <ul class = 'navbar-nav unstyled'> 
-   <li class='nav-item'>
-					<a class='nav-link' href='search.php'>Search</a>
-				  </li>
-				  <li class='nav-item'>
-					<a class='nav-link' href='aboutus.php'>About Us</a>
-				  </li>
-				  <li class='nav-item'>
-					<a class='nav-link' href='underconstruction.php'>Shop</a>
-				  </li> 
-				   <li class='nav-item'>
-					<a class='nav-link' href='contactus.php'>Contact Us</a>
-				  </li>
-				   <li class='nav-item'>
-					<a class='nav-link' href='login.php'>Log In</a>
-    </ul>
-  </div>  
-</nav>
-</div>
-<div class='border'>
- \n";
+			<a class='navbar-brand' href='Home.php'>Bookstore</a>
+			<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+			<span class='navbar-toggler-icon'></span>
+			</button>
+			<div class='collapse navbar-collapse' id='collapsibleNavbar'>
+			<ul class = 'navbar-nav unstyled'> 
+			<li class='nav-item'>
+			<a class='nav-link' href='search.php'>Search</a>
+			</li>
+			<li class='nav-item'>
+			<a class='nav-link' href='aboutus.php'>About Us</a>
+			</li>
+			<li class='nav-item'>
+			<a class='nav-link' href='underconstruction.php'>Shop</a>
+			</li> 
+			<li class='nav-item'>
+			<a class='nav-link' href='contactus.php'>Contact Us</a>
+			</li>
+			<li class='nav-item'>";
+		if(!isset($_SESSION['user'])) {
+			$returnVal .= "<a class='nav-link' href='login.php'>Log In</a></li>";	
+		}else{
+			$returnVal .= "<a class='nav-link' href='logout.php'>Log Out</a></li>";	
+		}	
+		$returnVal .= "</ul>
+			</div>  
+			</nav>
+			</div>
+			<div class='border'>
+			\n";
 
 		$this->_top = $returnVal;
 

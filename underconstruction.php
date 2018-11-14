@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("Template.php");
 
 /*for nav and bottom*/require_once("navAndbottom.php");
