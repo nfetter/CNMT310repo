@@ -22,17 +22,32 @@ class navAndbottom {
 		}
 		
 		$returnVal .= "<img src='Pictures/icon' alt='pic' width='150' height='100'/> \n";
-		$returnVal .= "<div id='nav'> \n";
-		$returnVal .= "<ul> \n";
-		$returnVal .= "<li><a href='Home.php'>Home</a></li> \n";
-		$returnVal .= "<li><a href='search.php'>Search</a></li> \n";
-		$returnVal .= "<li><a href='aboutus.php'>About Us</a></li> \n";
-		$returnVal .= "<li><a href='underconstruction.php'>Shop</a></li> \n";
-		$returnVal .= "<li><a href='contactus.php'>Contact Us</a></li> \n";	
-		$returnVal .= "<li><a href='login.php'>Log In</a></li> \n";		
-		$returnVal .= "</ul> \n";
-		$returnVal .= "</div> \n";
-		$returnVal .= "<div class='border'> \n";
+		
+		$returnVal .= "	<nav class='navbar navbar-expand-md bg-dark navbar-dark'>
+  <a class='navbar-brand' href='Home.php'>Navbar</a>
+  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+    <span class='navbar-toggler-icon'></span>
+  </button>
+  <div class='collapse navbar-collapse' id='collapsibleNavbar'>
+  <ul class = 'navbar-nav unstyled'> 
+   <li class='nav-item'>
+					<a class='nav-link' href='search.php'>Search</a>
+				  </li>
+				  <li class='nav-item'>
+					<a class='nav-link' href='aboutus.php'>About Us</a>
+				  </li>
+				  <li class='nav-item'>
+					<a class='nav-link' href='underconstruction.php'>Shop</a>
+				  </li> 
+				   <li class='nav-item'>
+					<a class='nav-link' href='contactus.php'>Contact Us</a>
+				  </li>
+				   <li class='nav-item'>
+					<a class='nav-link' href='login.php'>Log In</a>
+    </ul>
+  </div>  
+</nav>
+</div> \n";
 
 		$this->_top = $returnVal;
 
