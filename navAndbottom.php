@@ -24,7 +24,7 @@ class navAndbottom {
 		$returnVal .= "<img src='Pictures/icon' alt='pic' width='150' height='100'/> \n";
 		
 		$returnVal .= "	<nav class='navbar navbar-expand-md bg-dark navbar-dark'>
-  <a class='navbar-brand' href='Home.php'>Navbar</a>
+  <a class='navbar-brand' href='Home.php'>Bookstore</a>
   <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
     <span class='navbar-toggler-icon'></span>
   </button>
