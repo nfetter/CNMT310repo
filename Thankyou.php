@@ -51,7 +51,7 @@ $db = new DB();
 
 //Check if connected
 if (!$db->getConnStatus()) {
-  print "An error has occurred with connection\n";
+		print "An error has occurred with connection\n";
   exit;
 }
 
@@ -73,11 +73,11 @@ if (!filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
   exit();
 }
 
-$first_name = mysql_real_escape_string($first_name);
-$last_name = mysql_real_escape_string($last_name);
-$email_address = mysql_real_escape_string($email_address);
-$phone_number = mysql_real_escape_string($phone_number);
-$comment = mysql_real_escape_string($comment);
+$first_name = $db->dbEsc($first_name);
+$last_name = $db->dbEsc($last_name);
+$email_address = $db->dbEsc($email_address);
+$phone_number = $db->dbEsc($phone_number);
+$comment = $db->dbEsc($comment); 
 
 $db->dbCall("INSERT into contactsubmit (firstname, lastname, email, phonenumber, comments) 
 	VALUES ('$first_name', '$last_name', '$email_address', '$phone_number', '$comment');");

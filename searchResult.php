@@ -46,17 +46,15 @@ if (!isset($_POST['search'])) {
 //Create a search variable for the integer table ISBN
 $search = (int)$_POST['search'];
 $search = filter_var($search, FILTER_SANITIZE_NUMBER_INT);
-$search = mysql_real_escape_string($search);
+$search = $db->dbEsc($search);
 //Create a search variable for author and booktitle that searchs things that start with the user input
 $searchLike = $search;
 $searchLike .= "%";
 
 
 //The query for searching
-$query="SELECT * FROM bookinfo WHERE isbn = $search UNION 
-SELECT * FROM bookinfo WHERE author LIKE '$searchLike' UNION 
-SELECT * FROM bookinfo WHERE booktitle LIKE '$searchLike';";
-
+$query="SELECT * FROM bookinfo WHERE isbn = $search OR author LIKE '$searchLike' OR booktitle LIKE '$searchLike';";
+$found = false;
 //Run query
 $result = $db->dbCall($query);
 print "<div id=contact>";
@@ -67,6 +65,7 @@ print "<th>ISBN</th>";
 print "<th>Author</th>";
 print "</tr>";
 foreach($result as $row){
+	$found = true;
 	print "<tr>";
 	print "<td>" . $row['booktitle'] . "</td>";
 	print "<td>" . $row['isbn'] . "</td>";
@@ -74,8 +73,10 @@ foreach($result as $row){
 	print "</tr>";
 }
 print "</table>";
+if($found == false){
+	print"<p class='fail'>No results found.</p>";
+}
 print "</div> \n";
-
 /*for nav and bottom*/print $myPage->getBottomSection();
 
 print $page->getBottomSection();
