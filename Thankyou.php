@@ -68,7 +68,7 @@ $phone_number = filter_var($phone_number, FILTER_SANITIZE_NUMBER_INT);
 $comment = filter_var($comment, FILTER_SANITIZE_STRING);
 
 if (!filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
-  print"Invalid email format<br />"; 
+  $_SESSION['emailV'] = "<p class='fail'>The email address input is not valid</p> \n";
   header('Location: contactus.php');
   exit();
 }

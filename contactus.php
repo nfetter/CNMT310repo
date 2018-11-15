@@ -64,7 +64,13 @@ print $page->getTopSection();
 
 /*for nav and bottom*/print $myPage->getTopSection();
 
-
+if(isset($_SESSION['emailV'])){
+		if($_SESSION['emailV'] != 'Valid'){
+			print $_SESSION['emailV'];
+		}
+			
+	}
+$_SESSION['emailV'] = "Valid";
 
 print"
 
