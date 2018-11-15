@@ -28,14 +28,37 @@ print $page->getTopSection();
 
 /*for nav and bottom*/print $myPage->getTopSection();
 
-print "<div id= 'contact'> \n";
-print "<form method='post' action='searchResult.php'>";
-print "<fieldset> \n";
-print "Search: <input type='text' name='search'>";
-print "<br/><br/><button type='submit' class = 'button' name='Submit' value='Submit'>Submit</button>";
-print "</fieldset> \n";
-print "</form>";
-print "</div> \n";
+print"
+
+<div class='login-form'>
+
+	<form method='post' action='searchResult.php'>
+	
+	<h1>Search</h1>
+	
+	    <div class='form-group'>
+            <input type='text' class='form-control' id='search' name='search' placeholder='Search your books here...' required='required'>
+        </div>
+		
+		<div class='form-group'>
+
+            <button type='submit' class='btn btn-primary btn-block'>Submit</button>
+
+        </div>
+  
+    </form>
+
+  
+
+</div>
+
+
+
+
+
+         
+
+           \n";
 
 /*for nav and bottom*/print $myPage->getBottomSection();
 
