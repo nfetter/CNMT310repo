@@ -68,6 +68,7 @@ body,div,h1,form,fieldset,input{
 			}
 			.fail{
 				color:red;
+				text-align:center;
 			}
 		img,iframe{
 			display:block; 
