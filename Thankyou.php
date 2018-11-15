@@ -35,11 +35,13 @@ $page->setBottomSection();
 
 if (!isset($_POST['emailAddress'])) {
     print"Email is not set";
+	header('Location: contactus.php');
 	exit();
 }
 
 if (!isset($_POST['comment'])) {
     print"You have not submitted a comment";
+	header('Location: contactus.php');
 	exit();
 }
 
@@ -67,8 +69,15 @@ $comment = filter_var($comment, FILTER_SANITIZE_STRING);
 
 if (!filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
   print"Invalid email format<br />"; 
+  header('Location: contactus.php');
   exit();
 }
+
+$first_name = mysql_real_escape_string($first_name);
+$last_name = mysql_real_escape_string($last_name);
+$email_address = mysql_real_escape_string($email_address);
+$phone_number = mysql_real_escape_string($phone_number);
+$comment = mysql_real_escape_string($comment);
 
 $db->dbCall("INSERT into contactsubmit (firstname, lastname, email, phonenumber, comments) 
 	VALUES ('$first_name', '$last_name', '$email_address', '$phone_number', '$comment');");

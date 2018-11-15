@@ -37,12 +37,18 @@ if (!$db->getConnStatus()) {
   exit;
 }
 
+if (!isset($_POST['search'])) {
+    print"Didn't search anything";
+	header('Location: search.php');
+	exit();
+}
+
 //Create a search variable for the integer table ISBN
 $search = (int)$_POST['search'];
 $search = filter_var($search, FILTER_SANITIZE_NUMBER_INT);
+$search = mysql_real_escape_string($search);
 //Create a search variable for author and booktitle that searchs things that start with the user input
-$searchLike = $_POST['search'];
-$searchLike = filter_var($searchLike,FILTER_SANITIZE_STRING);
+$searchLike = $search;
 $searchLike .= "%";
 
 
