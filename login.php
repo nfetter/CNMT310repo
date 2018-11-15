@@ -35,7 +35,7 @@ print $page->getTopSection();
 /*for nav and bottom*/print $myPage->getTopSection();
 if(isset($_SESSION['fail'])){
 		if($_SESSION['fail'] == 'true'){
-			print"<p class='fail'>The Username or Password is incorrect</p> \n";
+			print"<p class='fail'>The Username or Password you entered did not match our records</p> \n";
 		}
 			
 	}
