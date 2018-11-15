@@ -86,13 +86,13 @@ print"
 
         <div class='form-group'>
 
-            <input type='text' class='form-control' id='firstName' name='firstname' placeholder='FirstName' required='required'>
+            <input type='text' class='form-control' id='firstName' name='firstName' placeholder='FirstName' required='required'>
 
         </div>
 
         <div class='form-group'>
 
-            <input type='text' class='form-control' id='lastName' name='lastname' placeholder='LastName' required='required'>
+            <input type='text' class='form-control' id='lastName' name='lastName' placeholder='LastName' required='required'>
 
         </div>
 
