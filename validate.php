@@ -12,6 +12,7 @@ session_start();
 	}
 	else {
 		exit();
+		
 	}
 	
 	
@@ -30,7 +31,7 @@ session_start();
 		}
 	$query = "SELECT * FROM user;";
 	$result = $db->dbCall($query);
-
+	$_SESSION['fail'] = " ";
 	foreach($result as $row){
 		if($row['username'] == $sanitizedName){
 			if(PASSWORD_VERIFY($sanitizedPass, $row['userpass'])) {
@@ -46,10 +47,14 @@ session_start();
 				header('Location: Home.php');
 				exit();
 			}
+		
 		} 	
+		
 	}
 	
-	
+	$_SESSION['fail'] = 'true';
+	header('Location: login.php');
+	exit();
 	
 	
 	

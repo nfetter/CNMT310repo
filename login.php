@@ -33,8 +33,16 @@ $page->setBottomSection();
 print $page->getTopSection();
 
 /*for nav and bottom*/print $myPage->getTopSection();
+if(isset($_SESSION['fail'])){
+		if($_SESSION['fail'] == 'true'){
+			print"<p class='fail'>Wrong User/Password</p> \n";
+		}
+			
+	}
+
 
 print"
+
 <div class='login-form'>
     <form action='validate.php' method='post'>
         <h2 class='text-center'>Log In</h2>       
