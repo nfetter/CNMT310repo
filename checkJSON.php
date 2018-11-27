@@ -24,9 +24,7 @@ if (!isset($_POST['data'])) {
 	foreach($result as $row){
 		if($row['username'] == $data['username']){
 			if(PASSWORD_VERIFY($data['userpass'], $row['userpass'])) {
-				$_SESSION['user'] = $data['username'];
-				$_SESSION['role'] = $row['rolename'];
-				print json_encode(array("result" => "true"));
+				print json_encode(array("result" => "true", "username" => $row['username'], "role" => $row['rolename']));
 				exit();
 			}
 		
