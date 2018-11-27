@@ -36,6 +36,7 @@ print $page->getTopSection();
 if(isset($_SESSION['fail'])){
 		if($_SESSION['fail'] == 'true'){
 			print"<p class='fail'>The Username or Password you entered did not match our records</p> \n";
+			$_SESSION['fail'] = "";
 		}
 			
 	}
@@ -44,7 +45,7 @@ if(isset($_SESSION['fail'])){
 print"
 
 <div class='login-form'>
-    <form action='validate.php' method='post'>
+    <form action='validateJSON.php' method='post'>
         <h2 class='text-center'>Log In</h2>       
         <div class='form-group'>
             <input type='text' class='form-control' id='user' name='user' placeholder='Username' required='required'>
