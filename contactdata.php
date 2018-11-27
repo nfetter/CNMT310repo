@@ -2,6 +2,14 @@
 session_start();
 require_once("Template.php");
 /*for nav and bottom*/require_once("navAndbottom.php");
+if(!isset($_SESSION['role'])) {
+	header('Location: Home.php');
+	exit();
+}
+if ($_SESSION ['role']!= "admin"){
+	header('Location: Home.php');
+	exit();
+}
 //Database stuff
 require_once("DB.class.php");
 $db = new DB();
@@ -28,14 +36,7 @@ $page->setBottomSection();
 /*for nav and bottom*/$myPage->setTopSection();
 /*for nav and bottom*/$myPage->setBottomSection();
 print $page->getTopSection();
-if(!isset($_SESSION['role'])) {
-	header('Location: Home.php');
-	exit();
-}
-if ($_SESSION ['role']!= "admin"){
-	header('Location: Home.php');
-	exit();
-}
+
 /*for nav and bottom*/print $myPage->getTopSection();
 
 //Check if connected
