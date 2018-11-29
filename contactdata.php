@@ -6,7 +6,7 @@ if(!isset($_SESSION['role'])) {
 	header('Location: Home.php');
 	exit();
 }
-if ($_SESSION ['role']!= "admin"){
+if (!in_array("admin", (array)$_SESSION['role'])){
 	header('Location: Home.php');
 	exit();
 }

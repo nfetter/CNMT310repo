@@ -43,7 +43,7 @@ class navAndbottom {
 			<a class='nav-link' href='contactus.php'>Contact Us</a>
 			</li>";
 			if(isset($_SESSION['role'])) {
-			if ($_SESSION ['role']== "admin"){
+			if (in_array("admin", (array)$_SESSION['role'])){
 				$returnVal .= "<li class='nav-item'>
 			<a class='nav-link' href='contactdata.php'>Contact Data</a>
 			</li>";

@@ -46,18 +46,18 @@ session_start();
 	
 	$return = curl_exec($ch);
 	
-	$return = (array)json_decode($return);
+	$return2 = (array)json_decode($return);
 	
+	var_dump($return);
 	
-	
-	if($return['result'] == "true"){
-		$_SESSION['user'] = $return['username'];
-		$_SESSION['role'] = $return['role'];
+	if($return2['result'] == "true"){
+		$_SESSION['user'] = $return2['username'];
+		$_SESSION['role'] = $return2['role'];
 		header('Location: Home.php');
 		exit();
 	}
 	
-	if($return['result'] == "false"){
+	if($return2['result'] == "false"){
 		$_SESSION['fail'] = 'true';
 		header('Location: login.php');
 		exit();
